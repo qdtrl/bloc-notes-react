@@ -1,15 +1,19 @@
 import React from 'react';
 import Showdown from 'showdown';
 
-const Note = ({id, notes, setNotes}) => {
-  const [noteHtml, setNoteHtml] = React.useState(null);
+const Note = ({id, notes, saveNotes}) => {
+  console.log(`On note : ${id} via Note`);
+  const [noteHtml, setNoteHtml] = React.useState();
+  const [title, setTitle] = React.useState(notes[id].title.slice(2, notes[id].title.length));
+  const [content, setContent] = React.useState(notes[id].content);
+
+  const handleChangeTitle = (event) => {
+    setTitle(event.target.value);
+  }
   
-  const handleNoteHtml = () => {
-    const converter = new Showdown.Converter();
-    const fullText = notes[0].title + "\n" + notes[0].content;
-    setNoteHtml(converter.makeHtml(fullText));
-    console.log(typeof(noteHtml));
-  };
+  const handleChangeContent = (event) => {
+    setContent(event.target.value);
+  }
 
   const displayNoteHtml = () => {
     return {__html: noteHtml};
@@ -17,16 +21,23 @@ const Note = ({id, notes, setNotes}) => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    const note = {title: `# ${event.target[0].value}`, content: event.target[1].value};
-    setNotes([...notes, note]);
+    notes.splice(id, 1);
+    notes.unshift({title: `# ${title}`, content: content});
+    saveNotes(notes);
   }
+
+  React.useEffect(() => {
+    const converter = new Showdown.Converter();
+    const fullText = "# " + title + "\n" + content;
+    setNoteHtml(converter.makeHtml(fullText));
+  }, [title, content])
 
   return (
     <section className="note">
       <div dangerouslySetInnerHTML={displayNoteHtml()} className="noteHtml"></div>
-      <form onChange={handleNoteHtml} onSubmit={handleSubmit}>
-        <input className="title" type="text"/>
-        <textarea className="content" type="text"/>
+      <form onSubmit={handleSubmit}>
+        <input onChange={handleChangeTitle} className="title" value={title} type="text"/>
+        <textarea  onChange={handleChangeContent} className="content" value={content} type="text"/>
         <button type="submit">Sauvegarder</button>
       </form>
     </section>

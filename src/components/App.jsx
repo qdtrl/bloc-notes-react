@@ -5,20 +5,20 @@ import Note from './note';
 const App = () => {
   const loadNotes = () => {
     const loadData = JSON.parse(localStorage.getItem('bloc-noteData'));
-    return loadData ? loadData : [{title: "# New note", content: "Empty"}] ;
+    return loadData ? loadData : [{title: "# New note", content: "Empty content"}] ;
   };
+
   const [notes, setNotes] = React.useState(loadNotes());
-  const [noteDisplay, setNoteDisplay] = React.useState(null);
+  const [noteDisplay, setNoteDisplay] = React.useState(false);
 
   
-  const saveNotes = () => {
-    const toSave = JSON.stringify(notes)
+  const saveNotes = (addedNotes) => {
+    const toSave = JSON.stringify(addedNotes)
     localStorage.setItem('bloc-noteData', toSave);
+    setNotes(loadNotes());
   };
-
-  React.useEffect(() => {
-    saveNotes()
-  }, [notes])
+  
+  console.log(`On note : ${noteDisplay} via app`);
 
   return (
     <>
@@ -26,15 +26,17 @@ const App = () => {
         notes &&
         <SideBar
           notes={notes}
+          setNotes={setNotes}
+          saveNotes={saveNotes}
           setNoteDisplay={setNoteDisplay}
         />  
       }  
       { 
-        noteDisplay &&
+        (noteDisplay !== false) &&
         <Note
           id={noteDisplay}
           notes={notes}
-          setNotes={setNotes}
+          saveNotes={saveNotes}
         /> 
       }
     </>
