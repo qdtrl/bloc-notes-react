@@ -3,19 +3,18 @@ import SideBar from './side_bar';
 import Note from './note';
 
 const App = () => {
-  const loadNotes = () => {
+  const getNotes = () => {
     const loadData = JSON.parse(localStorage.getItem('bloc-noteData'));
     return loadData ? loadData : [{title: "# New note", content: "Empty content"}] ;
   };
 
-  const [notes, setNotes] = React.useState(loadNotes());
+  const [notes, setNotes] = React.useState(getNotes());
   const [noteDisplay, setNoteDisplay] = React.useState(false);
-
   
   const saveNotes = (addedNotes) => {
     const toSave = JSON.stringify(addedNotes)
     localStorage.setItem('bloc-noteData', toSave);
-    setNotes(loadNotes());
+    setNotes(getNotes());
   };
   
   console.log(`On note : ${noteDisplay} via app`);
