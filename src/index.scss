@@ -1,0 +1,29 @@
+@import './config';
+
+* {
+  color: $white-color;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: $primary-color;
+}
+
+h1 {
+  color: $title-color;
+  margin: 2rem 0 2rem 0;
+  font-size: 2rem;
+  font-weight: 400;
+}
+
+div.load {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 300px;
+  p {
+    margin-left: 1rem;
+  }
+}
