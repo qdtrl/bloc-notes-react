@@ -1,0 +1,33 @@
+section.note {
+  width: 80vw;
+  position: absolute;
+  bottom: 0rem;
+  right: 0rem;
+  div.noteHtml {
+    height: 40vh;
+    padding: 1rem 2rem 1rem 2rem;
+  }
+  form {
+    height: 60vh;
+    display: flex;
+    flex-direction: column;
+    input[type="text" ] {
+      @include form;
+      height: 3rem;
+    
+      
+      // &:focus {
+      //   border: 1px solid $btn-color;
+      // }
+    }
+    textarea {
+      @include form;
+      height: 40vh;    
+    }
+    button {
+      margin: 0 1rem 0 1rem;
+      width: 300px;
+    }
+  }
+}
+

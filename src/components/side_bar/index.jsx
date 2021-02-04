@@ -1,11 +1,13 @@
 import React from 'react';
+import NotePresentation from '../note_presentation';
 
-const SideBar = () => {
+const SideBar = ({notes, setNoteDisplay}) => {
   return (
-    <nav>
-      <Button/>
+    <section className="sideBar">
+      <button>Ajouter une Note</button>
       <NotePresentation />
-    </nav>
+    </section>
   )
-}
+};
+
 export default SideBar;

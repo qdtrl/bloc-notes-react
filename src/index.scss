@@ -1,4 +1,6 @@
 @import './config';
+@import './components/note/note';
+@import './components/side_bar/side_bar';
 
 * {
   color: $white-color;
@@ -16,6 +18,14 @@ h1 {
   margin: 2rem 0 2rem 0;
   font-size: 2rem;
   font-weight: 400;
+}
+
+button {
+  border: none;
+  padding: 12px 50px;
+  background-color: $btn-color;
+  bottom: 6rem;
+  left: 6rem;
 }
 
 div.load {

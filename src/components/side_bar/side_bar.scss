@@ -1,0 +1,12 @@
+section.sideBar {
+  width: 20vw;
+  height: 100vh;
+  border-right: 2px $white-color solid;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  button {
+    margin-top: 1rem;
+    height: 50px;
+  }
+}
