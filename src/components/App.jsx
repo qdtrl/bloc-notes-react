@@ -34,6 +34,7 @@ const App = () => {
           id={noteDisplay}
           notes={notes}
           saveNotes={saveNotes}
+          setDisplayNotes={setNoteDisplay}
         /> 
       }
     </>

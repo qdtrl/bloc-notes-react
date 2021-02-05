@@ -1,7 +1,7 @@
 import React from 'react';
 import Showdown from 'showdown';
 
-const Note = ({id, notes, saveNotes}) => {
+const Note = ({id, notes, saveNotes, setDisplayNotes}) => {
   const [noteHtml, setNoteHtml] = React.useState();
   const [title, setTitle] = React.useState(notes[id].title.slice(2, notes[id].title.length));
   const [content, setContent] = React.useState(notes[id].content);
@@ -25,6 +25,13 @@ const Note = ({id, notes, saveNotes}) => {
     saveNotes(notes);
   }
 
+  const handleDelete = (event) => {
+    event.preventDefault();
+    notes.splice(0, 1);
+    saveNotes(notes);
+    setDisplayNotes(false);
+  }
+
   React.useEffect(() => {
     const converter = new Showdown.Converter();
     const fullText = "# " + title + "\n" + content;
@@ -39,10 +46,13 @@ const Note = ({id, notes, saveNotes}) => {
   return (
     <section className="note">
       <div dangerouslySetInnerHTML={displayNoteHtml()} className="noteHtml"></div>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} >
         <input onChange={handleChangeTitle} className="title" value={title} type="text"/>
         <textarea  onChange={handleChangeContent} className="content" value={content} type="text"/>
-        <button type="submit">Sauvegarder</button>
+        <div>
+          <button type="submit">Sauvegarder</button>
+          <button onClick={handleDelete} type="button">Supprimer</button>
+        </div>
       </form>
     </section>
   )
