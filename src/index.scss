@@ -1,4 +1,4 @@
-@import './config';
+@import './components/config';
 @import './components/note/note';
 @import './components/side_bar/side_bar';
 
@@ -26,14 +26,4 @@ button {
   background-color: $btn-color;
   bottom: 6rem;
   left: 6rem;
-}
-
-div.load {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 300px;
-  p {
-    margin-left: 1rem;
-  }
 }

@@ -5,10 +5,10 @@ import Note from './note';
 const App = () => {
   const getNotes = () => {
     const loadData = JSON.parse(localStorage.getItem('bloc-noteData'));
-    return loadData ? loadData : [{title: "# New note", content: "Empty content"}] ;
+    return loadData ? loadData : [] ;
   };
 
-  const [notes, setNotes] = React.useState([]);
+  const [notes, setNotes] = React.useState(getNotes());
   const [noteDisplay, setNoteDisplay] = React.useState(false);
   
   const saveNotes = (addedNotes) => {
