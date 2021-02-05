@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/bloc-notes-react/static/css/main.93bf4fbc.chunk.css",
+    "main.css": "/bloc-notes-react/static/css/main.824f9287.chunk.css",
     "main.js": "/bloc-notes-react/static/js/main.864da5c4.chunk.js",
     "main.js.map": "/bloc-notes-react/static/js/main.864da5c4.chunk.js.map",
     "runtime-main.js": "/bloc-notes-react/static/js/runtime-main.e559e510.js",
@@ -8,13 +8,13 @@
     "static/js/2.f32b975b.chunk.js": "/bloc-notes-react/static/js/2.f32b975b.chunk.js",
     "static/js/2.f32b975b.chunk.js.map": "/bloc-notes-react/static/js/2.f32b975b.chunk.js.map",
     "index.html": "/bloc-notes-react/index.html",
-    "static/css/main.93bf4fbc.chunk.css.map": "/bloc-notes-react/static/css/main.93bf4fbc.chunk.css.map",
+    "static/css/main.824f9287.chunk.css.map": "/bloc-notes-react/static/css/main.824f9287.chunk.css.map",
     "static/js/2.f32b975b.chunk.js.LICENSE.txt": "/bloc-notes-react/static/js/2.f32b975b.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.e559e510.js",
     "static/js/2.f32b975b.chunk.js",
-    "static/css/main.93bf4fbc.chunk.css",
+    "static/css/main.824f9287.chunk.css",
     "static/js/main.864da5c4.chunk.js"
   ]
 }
