@@ -2,7 +2,6 @@ import React from 'react';
 import Showdown from 'showdown';
 
 const Note = ({id, notes, saveNotes}) => {
-  console.log(`On note : ${id} via Note`);
   const [noteHtml, setNoteHtml] = React.useState();
   const [title, setTitle] = React.useState(notes[id].title.slice(2, notes[id].title.length));
   const [content, setContent] = React.useState(notes[id].content);

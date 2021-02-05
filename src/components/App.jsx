@@ -17,8 +17,6 @@ const App = () => {
     setNotes(getNotes());
   };
   
-  console.log(`On note : ${noteDisplay} via app`);
-
   return (
     <>
       {
