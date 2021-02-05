@@ -11,8 +11,8 @@ const NotePresentation = ({note, setNoteDisplay, index}) => {
   }
 
   return (
-          <li>
-            <div onClick={() => {setNoteDisplay(index);}} dangerouslySetInnerHTML={convertText()} className="contentHtml"></div>
+          <li onClick={() => {setNoteDisplay(index);}}>
+            <div dangerouslySetInnerHTML={convertText()} className="contentHtml"></div>
           </li>
   )
 };
