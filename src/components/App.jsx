@@ -8,7 +8,7 @@ const App = () => {
     return loadData ? loadData : [{title: "# New note", content: "Empty content"}] ;
   };
 
-  const [notes, setNotes] = React.useState(getNotes());
+  const [notes, setNotes] = React.useState([]);
   const [noteDisplay, setNoteDisplay] = React.useState(false);
   
   const saveNotes = (addedNotes) => {

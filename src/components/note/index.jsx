@@ -32,6 +32,11 @@ const Note = ({id, notes, saveNotes}) => {
     setNoteHtml(converter.makeHtml(fullText));
   }, [title, content])
 
+  React.useEffect(() => {
+    setTitle(notes[id].title.slice(2, notes[id].title.length))
+    setContent(notes[id].content)
+  }, [id])
+
   return (
     <section className="note">
       <div dangerouslySetInnerHTML={displayNoteHtml()} className="noteHtml"></div>
