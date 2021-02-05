@@ -27,7 +27,7 @@ const Note = ({id, notes, saveNotes, setDisplayNotes}) => {
 
   const handleDelete = (event) => {
     event.preventDefault();
-    notes.splice(0, 1);
+    notes.splice(id, 1);
     saveNotes(notes);
     setDisplayNotes(false);
   }
